@@ -79,7 +79,7 @@ var Builtins = []Word{
 				return fmt.Errorf("got type %q instead of uint8", c.Type)
 			}
 			ok := c.AsUint8()
-			if ok == 1 {
+			if ok == 0 {
 				return vm.Exec(strings.NewReader(onTrue))
 			}
 			return vm.Exec(strings.NewReader(onFalse))
@@ -141,6 +141,16 @@ var Builtins = []Word{
 				return err
 			}
 			return vm.s.Push(c)
+		},
+	},
+	{
+		Name: "drop",
+		Do: func(vm *VM) error {
+			_, err := vm.s.Pop()
+			if err != nil {
+				return err
+			}
+			return nil
 		},
 	},
 	{

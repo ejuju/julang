@@ -2,12 +2,11 @@
 "greet"    [ greeting print ] define
 greet
 
-"ascii-0"       [ 47                ] define
-"print-if-even" [ 2 % [print] [] if ] define
-"offset-1"      [ dup 1 +           ] define
-"print-even-0-to-8" [ 
+"ascii-0"       [ 48 ] define
+"print-if-even" [ 2 % [print] [drop] if ] define
+"print-even-0-to-8" [
         ascii-0
-        9 [ 1 + dup offset-1 print-if-even ] loop 
+        9 [ dup dup print-if-even 1 + ] loop 
 ] define
 
 print-even-0-to-8

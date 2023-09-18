@@ -7,3 +7,9 @@ Todo:
 - Support all basic stack operations (rot, swap, over, etc.)
 - Support getting the loop iteration count within the loop callback
 - Lots of other stuff
+
+"test" { "Hello world!" print }
+"test" [ "Hello world!" print ]
+"test" < "Hello world!" print >
+"test" \ "Hello world!" print /
+"test" ( "Hello world!" print )
